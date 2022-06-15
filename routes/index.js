@@ -1,9 +1,16 @@
-const Layout = require('../views/Layout');
+const express = require('express');
+const ReactDOMServer = require('react-dom/server');
+const React = require('react');
 
-const router = require('express').Router();
+const Main = require('../views/Main');
+
+const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.renderComponent(Layout);
+  const main = React.createElement(Main, {});
+  const html = ReactDOMServer.renderToStaticMarkup(main);
+  res.write('<!DOCTYPE html>');
+  res.end(html);
 });
 
 module.exports = router;

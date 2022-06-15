@@ -1,33 +1,33 @@
 const React = require('react');
+const NavBar = require('./NavBar');
 
-module.exports = function Layout({ children}) {
+module.exports = function Layout({ username, children }) {
   return (
-    <html lang="en">
+    <html lang="ru">
 
       <head>
-        {/* <link rel="stylesheet" href="/stylesheets/normalize.css" /> */}
-        {/* <link rel="stylesheet" href="/stylesheets/application.css" /> */}
-        <meta charSet="utf-8" />
-
-        {/* <script defer src="/js/application.js" /> */}
-
-        <title>Чай и точка</title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Чай и точка.</title>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
       </head>
 
       <body>
-        <header role="banner" className="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
-          <div className="max-w-700 center wrap-float">
-
-            <div className="logo-container">
+        <header role="banner" className="">
+          <div className="">
+              <NavBar />
               <h1>Чай и точка</h1>
-            </div>
           </div>
         </header>
-        <div className="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
+        <div className="">
           <div className="max-w-700 center">
             {children}
           </div>
         </div>
+
       </body>
 
     </html>

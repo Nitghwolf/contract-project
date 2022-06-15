@@ -19,7 +19,7 @@ module.exports = function Layout({ children}) {
           <div className="max-w-700 center wrap-float">
 
             <div className="logo-container">
-              <h1>Broccoli Blog</h1>
+              <h1>Чай и точка</h1>
             </div>
           </div>
         </header>

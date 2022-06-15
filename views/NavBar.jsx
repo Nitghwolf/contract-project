@@ -1,5 +1,6 @@
 const React = require('react');
 
+
 function NavBar({ user }) {
   return ((user && (
     <div className="navBar">

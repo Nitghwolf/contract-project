@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Main() {
+module.exports = function Main({user}) {
   return (
-    <Layout>
+    <Layout user={user}>
       <div className="">
         <div className=""><a href="/tea/">tea1</a></div>
         <div className=""><a href="/tea/">tea2</a></div>

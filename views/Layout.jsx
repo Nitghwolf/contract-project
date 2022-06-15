@@ -1,7 +1,7 @@
 const React = require('react');
 const NavBar = require('./NavBar');
 
-module.exports = function Layout({ username, children }) {
+module.exports = function Layout({ user, children }) {
   return (
     <html lang="ru">
 
@@ -18,7 +18,9 @@ module.exports = function Layout({ username, children }) {
       <body>
         <header role="banner" className="">
           <div className="">
-            <NavBar />
+
+              <NavBar user={user}/>
+
           </div>
         </header>
         <div className="content">

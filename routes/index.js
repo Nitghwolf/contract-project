@@ -7,10 +7,7 @@ const Main = require('../views/Main');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  const main = React.createElement(Main, {});
-  const html = ReactDOMServer.renderToStaticMarkup(main);
-  res.write('<!DOCTYPE html>');
-  res.end(html);
+  res.renderComponent(Main);
 });
 
 module.exports = router;

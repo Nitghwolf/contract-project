@@ -4,11 +4,10 @@ const ReactDOMServer = require('react-dom/server');
 const React = require('react');
 
 const express = require('express');
-const expressConfig = require('./config/express');
-
 
 const createError = require('http-errors');
 const path = require('path');
+const expressConfig = require('./config/express');
 
 // // Импортируем созданный в отдельный файлах рутеры.
 const indexRouter = require('./routes/index');
@@ -19,6 +18,10 @@ const app = express();
 const PORT = 3000;
 
 expressConfig(app);
+
+app.use(express.static('public'));
+// Подключаем middleware morgan с режимом логирования "dev", чтобы для каждого HTTP-запроса на
+// сервер в консоль выводилась информация об этом запросе.
 
 app.use('/', indexRouter);
 app.use('/register', registerRouter);

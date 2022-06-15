@@ -7,7 +7,8 @@ module.exports = function Login() {
       <h1>Вход</h1>
       <form id="signupForm" method="POST" action="/register/login">
         <div className="form-group">
-          <label htmlFor="username">Логин:
+          <label htmlFor="username">
+            Логин:
             <input
               id="username"
               className=""
@@ -21,7 +22,8 @@ module.exports = function Login() {
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="password">Пароль:
+          <label htmlFor="password">
+            Пароль:
             <input id="password" className="" name="password" type="password" required minLength="4" />
           </label>
         </div>

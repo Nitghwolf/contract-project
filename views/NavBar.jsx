@@ -1,22 +1,34 @@
 const React = require('react');
 
-function NavBar({user}){
-    return ((user && (<nav className="">
-    <ul className="">
-        <li className="">{user.user_name}</li>
-        <li className=""><a href="#">Личный кабинет</a></li>
-        <li className=""><a href="/register/logout">Выход</a></li>
-        <li className=""><a href="/">Домой</a></li>
-    </ul>
-</nav>)) 
-|| 
-( <nav className="">
-        <ul className="">
-            <li className=""><a href="/register">Регистрация</a></li>
-            <li className=""><a href="/register/login">Вход</a></li>
-            <li className=""><a href="/">Домой</a></li>
-        </ul>
-</nav>));
+
+function NavBar({ user }) {
+  return ((user && (
+    <div className="navBar">
+      <div className="logoAndTitle">
+        <div className="navBarTitle">ЧАЙ И ТОЧКА</div>
+        <div><img className="logo" src="/img/logo.png" alt="logo" /></div>
+      </div>
+      <div className="navBarLink">
+        <div className="navBarElem"><a href="/register">{user.name}</a></div>
+        <div className="navBarElem"><a href="/register">Личный кабинет</a></div>
+        <div className="navBarElem"><a href="/register/login">Выход</a></div>
+        <div className="navBarElem"><a href="/">Домой</a></div>
+      </div>
+    </div>
+  ))
+    || (
+      <div className="navBar">
+        <div className="logoAndTitle">
+          <div className="navBarTitle">ЧАЙ И ТОЧКА</div>
+          <div><img className="logo" src="/img/logo.png" alt="logo" /></div>
+        </div>
+        <div className="navBarLink">
+          <div className="navBarElem"><a href="/register">Регистрация</a></div>
+          <div className="navBarElem"><a href="/register/login">Вход</a></div>
+          <div className="navBarElem"><a href="/">Домой</a></div>
+        </div>
+      </div>
+    ));
 }
 
 module.exports = NavBar;

@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
+const Register = require('../views/Register');
+const Login = require('../views/Login');
 
 const Register = require('../views/Register');
 const Login = require('../views/Login');
@@ -16,6 +18,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+
     try {
         const { username, password } = req.body;
         const existingUser = await User.findOne({ where: { user_name:  username} });
@@ -34,6 +37,7 @@ router.post('/', async (req, res) => {
       } catch (error) {
         res.renderErrorComponent();
       }
+
 });
 
 router.get('/login', async (req, res) => {

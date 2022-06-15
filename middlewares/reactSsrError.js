@@ -1,5 +1,7 @@
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
+const Error = require('../views/Error');
+
 
 function renderErrorComponent(options = { doctype: true }) {
   const errorPage = React.createElement(Error, {
@@ -7,8 +9,8 @@ function renderErrorComponent(options = { doctype: true }) {
     error: {},
   });
   const html = ReactDOMServer.renderToStaticMarkup(errorPage);
-  res.write('<!DOCTYPE html>');
-  res.end(html);
+  this.write('<!DOCTYPE html>');
+  this.end(html);
 }
 
 function reactSsrError(req, res, next) {

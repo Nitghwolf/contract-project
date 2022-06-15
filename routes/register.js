@@ -1,12 +1,18 @@
-const Register = require('../views/Register');
-const Login = require('../views/Login');
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
+
+const Register = require('../views/Register');
+const Login = require('../views/Login');
 
 const { User } = require('../db/models');
 
 router.get('/', (req, res) => {
-  res.renderComponent(Register);
+  try{
+    res.renderComponent(Register);
+  }
+  catch(error){
+    res.renderErrorComponent();
+  }
 });
 
 router.post('/', async (req, res) => {
@@ -26,7 +32,7 @@ router.post('/', async (req, res) => {
         res.redirect('/');
     
       } catch (error) {
-        console.log(error);
+        res.renderErrorComponent();
       }
 });
 
@@ -34,7 +40,7 @@ router.get('/login', async (req, res) => {
   try {
     res.renderComponent(Login);
   } catch (error) {
-    console.log(error);
+    res.renderErrorComponent();
   }
 });
 
@@ -50,7 +56,7 @@ router.post('/login', async (req, res) => {
       res.send('Такого пользователя нет либо пароли не совпадают');
     }
   } catch (error) {
-    console.log(error);
+    res.renderErrorComponent();
   }
 });
 

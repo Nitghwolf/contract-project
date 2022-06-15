@@ -35,7 +35,7 @@ function expressConfig(app) {
 
   app.use(express.json());
 
-  app.use(session(sessionConfig));
+  // app.use(session(sessionConfig));
 
   app.use(reactSsrMiddleware);
   app.use(reactSsrError);

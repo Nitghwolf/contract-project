@@ -1,4 +1,5 @@
 const React = require('react');
+const NavBar = require('./NavBar');
 
 module.exports = function Layout({ username, children }) {
   return (
@@ -15,34 +16,16 @@ module.exports = function Layout({ username, children }) {
       </head>
 
       <body>
-        <ul className="nav">
-          <li className="nav-item">
-            <a className="nav-link" href="/">Главная</a>
-          </li>
-          {username
-            ? (
-              <>
-                <li className="nav-item">
-                  <a className="nav-link" href="/auth">{username}</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/logout">Выйти</a>
-                </li>
-              </>
-            )
-            : (
-              <>
-                <li className="nav-item">
-                  <a className="nav-link" href="/login">Войти</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/register">Зарегистрироваться</a>
-                </li>
-              </>
-            )}
-        </ul>
-        <div className="container-fluid">
-          {children}
+        <header role="banner" className="">
+          <div className="">
+              <NavBar />
+              <h1>Чай и точка</h1>
+          </div>
+        </header>
+        <div className="">
+          <div className="max-w-700 center">
+            {children}
+          </div>
         </div>
 
       </body>

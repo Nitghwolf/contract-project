@@ -1,4 +1,5 @@
 const React = require('react');
+const NavBar = require('./NavBar');
 
 module.exports = function Layout({ children}) {
   return (
@@ -15,15 +16,13 @@ module.exports = function Layout({ children}) {
       </head>
 
       <body>
-        <header role="banner" className="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
-          <div className="max-w-700 center wrap-float">
-
-            <div className="logo-container">
+        <header role="banner" className="">
+          <div className="">
+              <NavBar />
               <h1>Чай и точка</h1>
-            </div>
           </div>
         </header>
-        <div className="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
+        <div className="">
           <div className="max-w-700 center">
             {children}
           </div>

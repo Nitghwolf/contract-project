@@ -12,8 +12,7 @@ const path = require('path');
 
 // // Импортируем созданный в отдельный файлах рутеры.
 const indexRouter = require('./routes/index');
-// const entriesRouter = require('./routes/entries');
-// const registerRouter = require('./routes/register');
+const registerRouter = require('./routes/register');
 const Error = require('./views/Error');
 
 const app = express();
@@ -21,16 +20,9 @@ const PORT = 3000;
 
 expressConfig(app);
 
-// Подключаем middleware morgan с режимом логирования "dev", чтобы для каждого HTTP-запроса на
-// сервер в консоль выводилась информация об этом запросе.
-
 app.use('/', indexRouter);
-// app.use('/entries', entriesRouter);
-// app.use('/register', registerRouter);
+app.use('/register', registerRouter);
 
-// Если HTTP-запрос дошёл до этой строчки, значит ни один из ранее встречаемых рутов не ответил
-// на запрос.Это значит, что искомого раздела просто нет на сайте.Для таких ситуаций используется
-// код ошибки 404. Создаём небольшое middleware, которое генерирует соответствующую ошибку.
 app.use((req, res, next) => {
   const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');
   next(error);

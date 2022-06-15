@@ -35,8 +35,6 @@ function expressConfig(app) {
 
   app.use(express.json());
 
-  // app.use(cookieParser());
-
   app.use(session(sessionConfig));
 
   app.use(reactSsrMiddleware);

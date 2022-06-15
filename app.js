@@ -11,7 +11,7 @@ const createError = require('http-errors');
 const path = require('path');
 
 // // Импортируем созданный в отдельный файлах рутеры.
-// const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 // const entriesRouter = require('./routes/entries');
 // const registerRouter = require('./routes/register');
 const Error = require('./views/Error');
@@ -24,7 +24,7 @@ expressConfig(app);
 // Подключаем middleware morgan с режимом логирования "dev", чтобы для каждого HTTP-запроса на
 // сервер в консоль выводилась информация об этом запросе.
 
-// app.use('/', indexRouter);
+app.use('/', indexRouter);
 // app.use('/entries', entriesRouter);
 // app.use('/register', registerRouter);
 

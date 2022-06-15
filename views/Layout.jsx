@@ -1,15 +1,15 @@
 const React = require('react');
 
-module.exports = function Layout({ children, user }) {
+module.exports = function Layout({ children}) {
   return (
     <html lang="en">
 
       <head>
-        <link rel="stylesheet" href="/stylesheets/normalize.css" />
-        <link rel="stylesheet" href="/stylesheets/application.css" />
+        {/* <link rel="stylesheet" href="/stylesheets/normalize.css" /> */}
+        {/* <link rel="stylesheet" href="/stylesheets/application.css" /> */}
         <meta charSet="utf-8" />
 
-        <script defer src="/js/application.js" />
+        {/* <script defer src="/js/application.js" /> */}
 
         <title>Broccoli Blog</title>
       </head>
@@ -17,16 +17,8 @@ module.exports = function Layout({ children, user }) {
       <body>
         <header role="banner" className="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
           <div className="max-w-700 center wrap-float">
-            <nav className="clearfix mar-b-1">
-              <ul className="no-bullets no-margin no-padding right">
-                <li className="pipe-separate t-light-green left">{(user && (<a href="/">{user.name}</a>)) || (<a href="/register">register</a>)}</li>
-                <li className="pipe-separate t-light-green left">{(user && (<a href="/register/logout">logout</a>)) || (<a href="/register/login">login</a>)}</li>
-                <li className="pipe-separate t-light-green left"><a href="/">home</a></li>
-              </ul>
-            </nav>
 
             <div className="logo-container">
-              <img className="logo center block" src="/images/logo.png" alt="logo" />
               <h1>Broccoli Blog</h1>
             </div>
           </div>

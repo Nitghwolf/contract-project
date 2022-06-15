@@ -5,7 +5,7 @@ function NavBar({user}){
     <ul className="">
         <li className="">{user.user_name}</li>
         <li className=""><a href="#">Личный кабинет</a></li>
-        <li className=""><a href="/register/login">Выход</a></li>
+        <li className=""><a href="/register/logout">Выход</a></li>
         <li className=""><a href="/">Домой</a></li>
     </ul>
 </nav>)) 

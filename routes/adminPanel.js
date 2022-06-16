@@ -20,7 +20,6 @@ router.post('/', async (req, res) => {
     const {
       name, location, picture, descr, sort,
     } = req.body;
-    // console.log(name, location, picture, descr, sort);
     const teas = await Tea.create({
       name_tea: name,
       variety: sort,
@@ -28,7 +27,7 @@ router.post('/', async (req, res) => {
       description: descr,
       origin_country: location,
     });
-    // res.redirect('/adminpanel');
+    res.redirect('/adminpanel');
   } catch (error) {
     // res.renderErrorComponent();
     console.log(error);

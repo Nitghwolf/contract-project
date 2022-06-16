@@ -9,7 +9,7 @@ function NavBar({ user }) {
       </div>
       <div className="navBarLink">
         <div className="navBarElem">{user.user_name}</div>
-        <div className="navBarElem"><a href="/register">Личный кабинет</a></div>
+        <div className="navBarElem"><a href="/adminpanel">Личный кабинет</a></div>
         <div className="navBarElem"><a href="/register/logout">Выход</a></div>
         <div className="navBarElem"><a href="/">Домой</a></div>
       </div>

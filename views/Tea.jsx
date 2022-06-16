@@ -25,12 +25,12 @@ function Tea({
           <hr />
         </div>
         <div className="headerInfo">Коментарии</div>
-        <form className="comentDiv">
-          <input className="coment" type="text" placeholder="Добавить коментарий" />
+        <form className="comentDiv" id={tea.id}>
+          <input className="coment" type="text" name="comment" placeholder="Добавить коментарий" />
           <button type="submit" className="btn">Добавить</button>
         </form>
         <div className="comentDivBody">
-          <div>
+          <div className="wrap">
             {comments.map((com) => (
               <div className="card">
                 <div className="itemIncoment1">{com['User.user_name']}</div>

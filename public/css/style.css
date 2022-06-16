@@ -114,3 +114,18 @@ ul {
   color: black;
 }
 
+.card{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.itemIncoment1 {
+  text-align: start;
+  color: darksalmon;
+  padding-left: 5px;
+}
+.itemIncoment2 {
+  text-align: end;
+  font-size: 12px;
+}

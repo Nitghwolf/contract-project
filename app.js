@@ -15,6 +15,7 @@ const registerRouter = require('./routes/register');
 
 const adminPanel = require('./routes/adminPanel');
 const teaRouter = require('./routes/tea');
+const bdRouter = require('./routes/bd');
 const Error = require('./views/Error');
 
 const app = express();
@@ -30,6 +31,7 @@ app.use('/', indexRouter);
 app.use('/register', registerRouter);
 app.use('/adminpanel', adminPanel);
 app.use('/tea', teaRouter);
+app.use('/bd', bdRouter);
 
 app.use((req, res, next) => {
   const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');

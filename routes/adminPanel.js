@@ -1,15 +1,22 @@
 const router = require('express').Router();
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
 
 const AdminPanel = require('../views/AdminPanel');
+const CardTea = require('../views/CardTea');
 const { Comment, User, Tea } = require('../db/models');
 
 router.get('/', async (req, res) => {
   const { userId } = req.session;
   const user = userId && await User.findByPk(userId);
   const teas = await Tea.findAll();
-  // console.log(teas);
+  const comments = await Comment.findAll({
+    where: {
+      user_id: userId,
+    },
+  });
   try {
-    res.renderComponent(AdminPanel, { user, teas });
+    res.renderComponent(AdminPanel, { user, teas, comments });
   } catch (error) {
     res.renderErrorComponent();
   }
@@ -20,73 +27,40 @@ router.post('/', async (req, res) => {
     const {
       name, location, picture, descr, sort,
     } = req.body;
-    const teas = await Tea.create({
+    const tea = await Tea.create({
       name_tea: name,
       variety: sort,
       img: picture,
       description: descr,
       origin_country: location,
     });
-    res.redirect('/adminpanel');
+    const element = React.createElement(CardTea, { tea });
+    const html = ReactDOMServer.renderToStaticMarkup(element);
+    res.send(html);
+    // res.redirect('/adminpanel');
   } catch (error) {
-    // res.renderErrorComponent();
-    console.log(error);
+    res.renderErrorComponent();
   }
 });
 
-// router.post('/', async (req, res) => {
-//     try {
-//         const { username, password } = req.body;
-//         const existingUser = await User.findOne({ where: { user_name:  username} });
-//         if (existingUser) {
-//           res.send('Такой пользователь уже есть');
-//           return;
-//         }
-
-//         const user = await User.create({
-//           user_name: username,
-//           password: await bcrypt.hash(password, 10),
-//         });
-//         req.session.userId = user.id;
-//         res.redirect('/');
-
-//       } catch (error) {
-//         res.renderErrorComponent();
-//       }
-// });
-
-// router.get('/login', async (req, res) => {
-//   try {
-//     res.renderComponent(Login);
-//   } catch (error) {
-//     res.renderErrorComponent();
-//   }
-// });
-
-// router.post('/login', async (req, res) => {
-//   try {
-//     const { username, password } = req.body;
-//     const existingUser = await User.findOne({ where: { user_name: username } });
-
-//     if (existingUser && await bcrypt.compare(password, existingUser.password)) {
-//       req.session.userId = existingUser.id;
-//       res.redirect('/');
-//     } else {
-//       res.send('Такого пользователя нет либо пароли не совпадают');
-//     }
-//   } catch (error) {
-//     res.renderErrorComponent();
-//   }
-// });
-
-// router.get('/logout', async (req, res) => {
-//   try {
-//     req.session.destroy();
-//     res.redirect('/');
-
-//   } catch (error) {
-//     res.renderErrorComponent();
-//   }
-// });
+router.delete('/:id', async (req, res) => {
+  try {
+    await Tea.destroy({ where: { id: req.params.id } });
+    res.json({ isDeleteSuccessful: true });
+    // const {
+    //   name, location, picture, descr, sort,
+    // } = req.body;
+    // const teas = await Tea.create({
+    //   name_tea: name,
+    //   variety: sort,
+    //   img: picture,
+    //   description: descr,
+    //   origin_country: location,
+    // });
+    // res.redirect('/adminpanel');
+  } catch (error) {
+    res.renderErrorComponent();
+  }
+});
 
 module.exports = router;

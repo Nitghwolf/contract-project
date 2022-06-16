@@ -3,8 +3,6 @@ const bcrypt = require('bcrypt');
 const Register = require('../views/Register');
 const Login = require('../views/Login');
 
-const Register = require('../views/Register');
-const Login = require('../views/Login');
 
 const { User } = require('../db/models');
 
@@ -75,3 +73,4 @@ router.get('/logout', async (req, res) => {
 });
 
 module.exports = router;
+ 

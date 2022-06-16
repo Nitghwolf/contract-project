@@ -1,38 +1,35 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-
-function Tea({ comment }) {
+function Tea({ comments, user, tea }) {
   return (
- <Layout>
-            
-   <div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="Информация о чае">Card title</h5>
-        <p class="card-text">Информация о чае. Описание.</p>
-  </div>
-  </div>       
-{/* вывод коментов */}
-      <div className="comments">
-          {comment.map((comment) => (
-            <Сomment key={comment.id} comment={comment} />
-          ))}
-      </div>   
-
-{/* форма для ввода комента */}
-    <form method="POST" action="input comment">
-        <div className="mb-3">
-          <label htmlFor="name-input" className="form-label">Name</label>
-          <input type="text" className="form-control" id="name-input" name="name" />
+    <Layout user={user}>
+      <div className="headerInfo">Информация о сорте чая</div>
+      <div className="containerTeaPage">
+        <div className="imgTea">
+          <div className="card-tea_item-pic"><img src={tea.img} alt="pic tea" /></div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-          <input type="password" className="form-control" id="exampleInputPassword1" name="password" />
+        <div className="descriptionTeaAll">
+          <div className="descriptionTea">Название</div>
+          <div className="itemFont">{tea.name_tea}</div>
+          <div className="descriptionTea">Сорт</div>
+          <div className="itemFont">{tea.variety}</div>
+          <div className="descriptionTea">Место культивации</div>
+          <div className="itemFont">{tea.origin_country}</div>
+          <div className="descriptionTea">Описание</div>
+          <div className="itemFont"><p>{tea.description}</p></div>
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-    </form>      
-      
-</Layout>
+        <hr />
+      </div>
+      <div className="headerInfo">Коментарии</div>
+      <div className="comentDiv">
+        <div><input className="coment" type="text" placeholder="Добавить коментарий" /></div>
+        <div><button type="submit" className="btn">Добавить</button></div>
+      </div>
+      <div className="comentDivBody">
+        <div>{comments.map((com) => (<div className="card">{com.content}</div>))}</div>
+      </div>
+    </Layout>
   );
 }
 

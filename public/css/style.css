@@ -56,5 +56,61 @@ ul {
   color: #fff;
 } */
 
+.descriptionTea {
+  font-size: 24px;
+  color: darksalmon;
+  font-weight: 800;
+}
 
+.coment {
+  width: 400px;
+  height: 62px;
+  margin-right: 10px;
+}
+
+.containerTeaPage {
+  display: flex;
+  text-align: start;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.imgTea {
+  border: 3px solid darksalmon;
+}
+
+.descriptionTeaAll {
+  border: 3px solid white;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.itemFont {
+  font-size: 20px;
+}
+
+.headerInfo {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 32px;
+  color: white;
+  font-weight: 800;
+}
+
+.comentDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.comentDivBody {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 700px;
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+}
 

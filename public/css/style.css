@@ -105,10 +105,12 @@ ul {
 .comentDivBody {
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .card {
-  width: 700px;
+  max-width: 700px;
+  width: 100%;
   margin-top: 10px;
   background-color: white;
   color: black;

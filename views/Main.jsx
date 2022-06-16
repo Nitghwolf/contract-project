@@ -4,7 +4,9 @@ const Layout = require('./Layout');
 module.exports = function Main({ user, teas }) {
   return (
     <Layout user={user}>
+
       <div className="container">
+        <div id="map" />
         <ul className="admin-panel_list">
           {teas.map((tea) => (
             <li className="admin-panel_item">
@@ -23,6 +25,7 @@ module.exports = function Main({ user, teas }) {
           ))}
         </ul>
       </div>
+
     </Layout>
   );
 };

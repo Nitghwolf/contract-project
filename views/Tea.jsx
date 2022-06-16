@@ -27,7 +27,15 @@ function Tea({ comments, user, tea }) {
         <div><button type="submit" className="btn">Добавить</button></div>
       </div>
       <div className="comentDivBody">
-        <div>{comments.map((com) => (<div className="card">{com.content}</div>))}</div>
+        <div>
+          {comments.map((com) => (
+            <div className="card">
+              <div className="itemIncoment1">USER</div>
+              <div>{com.content}</div>
+              <div className="itemIncoment2">{` ${new Date(com.createdAt).getDate()}.${new Date(com.createdAt).getMonth()}.${new Date(com.createdAt).getFullYear()} ${new Date(com.createdAt).getHours()}:${new Date(com.createdAt).getMinutes()}`}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </Layout>
   );

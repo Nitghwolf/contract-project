@@ -9,7 +9,7 @@ module.exports = function Layout({ user, children }) {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <script defer type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab9995fbed6a999c101253389d1ca33b684e884cd1644cd9984fe98a360eed1bd&amp;lang=ru_RU&amp;scroll=true" />
+        <script defer type="text/javascript" charSet="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab9995fbed6a999c101253389d1ca33b684e884cd1644cd9984fe98a360eed1bd&amp;lang=ru_RU&amp;scroll=true" />
 
         <title>Чай и точка</title>
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossOrigin="anonymous" />

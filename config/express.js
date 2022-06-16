@@ -2,20 +2,19 @@ const express = require('express');
 
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
-const reactSsrMiddleware = require('../middlewares/reactSsr');
 const logger = require('morgan');
+const reactSsrMiddleware = require('../middlewares/reactSsr');
 const reactSsrError = require('../middlewares/reactSsrError');
-
 
 const sessionConfig = {
   store: new FileStore(),
   name: 'user_sid', // Имя куки для хранения id сессии. По умолчанию - connect.sid
-  secret: process.env.SESSION_SECRET ?? 'G(8x>|Ai^"+&', // Секретное слово для шифрования, может быть любым
+  secret: process.env.SESSION_SECRET || 'G(8x>|Ai^"+&', // Секретное слово для шифрования, может быть любым
   resave: false, // Пересохранять ли куку при каждом запросе
   saveUninitialized: false, // Создавать ли сессию без инициализации ключей в req.session
   cookie: {
     maxAge: 1000 * 60 * 60 * 12, // Срок истечения годности куки в миллисекундах
-    httpOnly: true, 
+    httpOnly: true,
   },
 };
 

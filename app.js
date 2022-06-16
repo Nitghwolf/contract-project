@@ -12,6 +12,7 @@ const expressConfig = require('./config/express');
 // // Импортируем созданный в отдельный файлах рутеры.
 const indexRouter = require('./routes/index');
 const registerRouter = require('./routes/register');
+const adminPanel = require('./routes/adminPanel');
 const Error = require('./views/Error');
 
 const app = express();
@@ -25,6 +26,7 @@ app.use(express.static('public'));
 
 app.use('/', indexRouter);
 app.use('/register', registerRouter);
+app.use('/adminpanel', adminPanel);
 
 app.use((req, res, next) => {
   const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');

@@ -3,41 +3,34 @@ const bcrypt = require('bcrypt');
 const Register = require('../views/Register');
 const Login = require('../views/Login');
 
-const Register = require('../views/Register');
-const Login = require('../views/Login');
-
 const { User } = require('../db/models');
 
 router.get('/', (req, res) => {
-  try{
+  try {
     res.renderComponent(Register);
-  }
-  catch(error){
+  } catch (error) {
     res.renderErrorComponent();
   }
 });
 
 router.post('/', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const existingUser = await User.findOne({ where: { user_name: username } });
+    if (existingUser) {
+      res.send('Такой пользователь уже есть');
+      return;
+    }
 
-    try {
-        const { username, password } = req.body;
-        const existingUser = await User.findOne({ where: { user_name:  username} });
-        if (existingUser) {
-          res.send('Такой пользователь уже есть');
-          return;
-        }
-    
-        const user = await User.create({
-          user_name: username,
-          password: await bcrypt.hash(password, 10),
-        });
-        req.session.userId = user.id;
-        res.redirect('/');
-    
-      } catch (error) {
-        res.renderErrorComponent();
-      }
-
+    const user = await User.create({
+      user_name: username,
+      password: await bcrypt.hash(password, 10),
+    });
+    req.session.userId = user.id;
+    res.redirect('/');
+  } catch (error) {
+    res.renderErrorComponent();
+  }
 });
 
 router.get('/login', async (req, res) => {
@@ -68,7 +61,6 @@ router.get('/logout', async (req, res) => {
   try {
     req.session.destroy();
     res.redirect('/');
-
   } catch (error) {
     res.renderErrorComponent();
   }

@@ -12,14 +12,15 @@ module.exports = function Layout({ user, children }) {
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="/css/styles.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon" />
       </head>
 
       <body>
         <header role="banner" className="">
           <div className="">
 
-              <NavBar user={user}/>
+            <NavBar user={user} />
 
           </div>
         </header>

@@ -10,7 +10,7 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   const { userId } = req.session;
   const user = userId && await User.findByPk(userId);
-  res.renderComponent(Main, {user});
+  res.renderComponent(Main, { user });
 });
 
 module.exports = router;

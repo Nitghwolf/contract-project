@@ -56,5 +56,13 @@ ul {
   color: #fff;
 } */
 
+#map{
+  margin-left: 30%;
+  width: 600px;
+  height: 400px
+}
 
+.map-href{
+  color: #050404;
+}
 

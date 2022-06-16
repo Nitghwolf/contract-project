@@ -18,6 +18,8 @@ module.exports = function Layout({ user, children }) {
         <link href="/css/bootstrap.css" rel="stylesheet" />
         <link href="/css/style.css" rel="stylesheet" />
         <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon" />
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=69e10893-2c84-42aa-89b4-4b684b720fad&lang=ru_RU" type="text/javascript" />
+        <script defer src="/maps.js" type="text/javascript" />
       </head>
 
       <body>

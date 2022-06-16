@@ -1,7 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .admin-panel_title {
@@ -16,6 +24,9 @@ ul {
 }
 
 .admin-panel_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   max-width: 200px;
   border: 1px solid #fff;
   padding: 10px;
@@ -24,7 +35,6 @@ ul {
 }
 
 .card-tea_item li {
-  margin-bottom: 10px;
   min-height: 30px;
   font-size: 14px;
 }
@@ -49,6 +59,60 @@ ul {
 	background-clip: text;
 	background-image: linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0));
 }
+
+.card-tea_btn-delete {
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  border-radius: 7px;
+  transition: all .5s ease;
+  display: block;
+}
+
+.card-tea_btn-delete:hover {
+  background-color: #fff;
+  color: #000;
+
+}
+
+.navBarElem.name {
+  color: #E9967A;
+  font-weight: bold;
+}
+
+.logo-block{
+  display: flex;
+}
+
+.navBarElem a {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание */
+}
+.navBarElem a:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: #9c4b30;/* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.navBarElem a:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color: #E9967A;/* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+}
+
+
 
 /* .card-tea_item-desc:hover {
   overflow: visible;

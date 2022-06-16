@@ -18,6 +18,7 @@ module.exports = function Layout({ user, children }) {
         <link href="/css/bootstrap.css" rel="stylesheet" />
         <link href="/css/style.css" rel="stylesheet" />
         <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon" />
+        <script defer src="/js/application.js" />
       </head>
 
       <body>

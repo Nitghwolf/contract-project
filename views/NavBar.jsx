@@ -8,9 +8,9 @@ function NavBar({ user }) {
         <div><img className="logo" src="/img/logo.png" alt="logo" /></div>
       </div>
       <div className="navBarLink">
-        <div className="navBarElem">{user.name}</div>
+        <div className="navBarElem">{user.user_name}</div>
         <div className="navBarElem"><a href="/register">Личный кабинет</a></div>
-        <div className="navBarElem"><a href="/register/login">Выход</a></div>
+        <div className="navBarElem"><a href="/register/logout">Выход</a></div>
         <div className="navBarElem"><a href="/">Домой</a></div>
       </div>
     </div>

@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
     const { username, password } = req.body;
     const existingUser = await User.findOne({ where: { user_name: username } });
     if (existingUser) {
-      res.send('Такой пользователь уже есть');
+      res.renderErrorComponent();
       return;
     }
 
@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
       req.session.userId = existingUser.id;
       res.redirect('/');
     } else {
-      res.send('Такого пользователя нет либо пароли не совпадают');
+      res.renderErrorComponent();
     }
   } catch (error) {
     res.renderErrorComponent();

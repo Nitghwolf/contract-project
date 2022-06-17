@@ -1,4 +1,5 @@
 require('@babel/register');
+require('dotenv').config();
 
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
@@ -19,7 +20,7 @@ const bdRouter = require('./routes/bd');
 const Error = require('./views/Error');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 expressConfig(app);
 

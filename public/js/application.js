@@ -13,7 +13,7 @@ try {
     }
   });
 } catch (e) {
-  console.error(e);
+
 }
 
 try {
@@ -37,7 +37,7 @@ try {
     adminPanelList.insertAdjacentHTML('beforeend', answerResponse);
   });
 } catch (e) {
-  console.error(e);
+
 }
 try {
   commentForm.addEventListener('submit', async (e) => {
@@ -53,10 +53,9 @@ try {
     });
     e.target.reset();
     const answerResponse = await responce.text();
-    // console.log(answerResponse, 'TEST');
     document.querySelector('.wrap').insertAdjacentHTML('afterbegin', answerResponse);
   });
 } catch (e) {
-  console.error(e);
+
 }
-console.log(document.querySelector('.wrap'));
+

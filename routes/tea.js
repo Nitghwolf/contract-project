@@ -20,7 +20,6 @@ router.get('/:id', async (req, res) => {
     });
     let tea = await Tea.findOne({ where: { id: req.params.id } });
     tea = tea.dataValues;
-    // const comments = await Comment.findAll({ where: { tea_id: req.params.id } });
 
     res.renderComponent(TeaView, { tea, user, comments });
   } catch (error) {
@@ -37,10 +36,8 @@ router.post('/:id', async (req, res) => {
     content: comment,
     tea_id: req.params.id,
   });
-  console.log(commentRes, user);
   const element = React.createElement(CommentView, { commentRes, user });
   const html = ReactDOMServer.renderToStaticMarkup(element);
-  console.log(html);
   res.send(html);
 });
 

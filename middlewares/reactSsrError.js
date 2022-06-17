@@ -3,9 +3,9 @@ const React = require('react');
 const Error = require('../views/Error');
 
 
-function renderErrorComponent(options = { doctype: true }) {
+function renderErrorComponent(options = {doctype: true, message:'Не удалось обратиться к базе данных'}) {
   const errorPage = React.createElement(Error, {
-    message: 'Не удалось получить записи.',
+    message: options.message,
     error: {},
   });
   const html = ReactDOMServer.renderToStaticMarkup(errorPage);

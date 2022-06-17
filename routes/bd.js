@@ -1,7 +1,6 @@
 const express = require('express');
 
-const Main = require('../views/Main');
-const { User, Tea } = require('../db/models');
+const { Tea } = require('../db/models');
 
 const router = express.Router();
 

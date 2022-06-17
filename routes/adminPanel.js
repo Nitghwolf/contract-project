@@ -37,7 +37,6 @@ router.post('/', async (req, res) => {
     const element = React.createElement(CardTea, { tea });
     const html = ReactDOMServer.renderToStaticMarkup(element);
     res.send(html);
-    // res.redirect('/adminpanel');
   } catch (error) {
     res.renderErrorComponent();
   }
@@ -47,17 +46,6 @@ router.delete('/:id', async (req, res) => {
   try {
     await Tea.destroy({ where: { id: req.params.id } });
     res.json({ isDeleteSuccessful: true });
-    // const {
-    //   name, location, picture, descr, sort,
-    // } = req.body;
-    // const teas = await Tea.create({
-    //   name_tea: name,
-    //   variety: sort,
-    //   img: picture,
-    //   description: descr,
-    //   origin_country: location,
-    // });
-    // res.redirect('/adminpanel');
   } catch (error) {
     res.renderErrorComponent();
   }

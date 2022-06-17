@@ -4,7 +4,7 @@ const adminPanelList = document.querySelector('.admin-panel_list');
 const commentForm = document.querySelector('form.comentDiv');
 try {
   adminPanel.addEventListener('click', async (e) => {
-    if (e.target.className === 'card-tea_btn-delete') {
+    if (e.target.className === 'card-tea_btn-delete btn-amazing') {
       e.preventDefault();
       const responce = await fetch(`/adminpanel/${e.target.id}`, {
         method: 'DELETE',

@@ -20,8 +20,10 @@ function NavBar({ user }) {
     || (
       <div className="navBar">
         <div className="logoAndTitle">
-          <div className="navBarTitle">ЧАЙ И ТОЧКА</div>
-          <div><img className="logo" src="/img/logo.png" alt="logo" /></div>
+          <a className="logo-block" href="/">
+            <div className="navBarTitle">ЧАЙ И ТОЧКА</div>
+            <img className="logo" src="/img/logo.png" alt="logo" />
+          </a>
         </div>
         <div className="navBarLink">
           <div className="navBarElem"><a href="/register">Регистрация</a></div>

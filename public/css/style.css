@@ -221,6 +221,10 @@ a {
   height: 62px;
   margin-right: 10px;
   margin-top: 15px;
+  outline-color: darksalmon;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0 10px;
 }
 
 .containerTeaPage {
@@ -238,7 +242,7 @@ a {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
-  background-color: white;
+  background-color: #ffffffd9;
 }
 
 .itemFont {
@@ -252,6 +256,7 @@ a {
   font-size: 32px;
   color: white;
   font-weight: 800;
+  text-align: center;
 }
 
 .comentDiv {
@@ -277,6 +282,7 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 5px;
+  background: #ffffffd9;
 }
 
 .itemIncoment1 {
@@ -343,7 +349,6 @@ display: flex;
 
 .navBarTitle {
   display: flex;
-
   }
 
 .content {
@@ -365,5 +370,38 @@ display: flex;
 }
 
 .commentText {
+  text-align: center;
   font-family: 'Laptev';
+}
+
+#signupForm {
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title_login {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.title_login {
+  text-align: center;
+  margin-top: 10%;
+}
+
+#signupForm input {
+  border-radius: 0.25rem;
+  width: 100%;
+  padding: 5px 10px;
+  outline-color: darksalmon;
+  border: none;
+}
+
+#signupForm button {
+  margin-top: 25px;
+}
+
+.btn-reg-log {
+  width: 100%;
 }

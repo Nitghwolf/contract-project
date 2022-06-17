@@ -28,7 +28,7 @@ function Tea({
         {(user && (
           <form className="comentDiv" id={tea.id}>
             <input className="coment" type="text" name="comment" placeholder="Добавить коментарий" />
-            <button type="submit" className="btn">Добавить</button>
+            <button type="submit" className="btn btn-amazing">Добавить</button>
           </form>
         ))}
         <div className="comentDivBody">

@@ -25,7 +25,8 @@ module.exports = function Main({ user, teas }) {
           ))}
         </ul>
       </div>
-
+      <script src="https://api-maps.yandex.ru/2.1/?apikey=69e10893-2c84-42aa-89b4-4b684b720fad&lang=ru_RU" type="text/javascript" />
+      <script defer src="/maps.js" type="text/javascript" />
     </Layout>
   );
 };

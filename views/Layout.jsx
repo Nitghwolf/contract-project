@@ -30,10 +30,8 @@ module.exports = function Layout({ user, children }) {
 
           </div>
         </header>
-        <div className="content">
-          <div className="max-w-700 center">
-            {children}
-          </div>
+        <div className="container">
+          {children}
         </div>
 
       </body>

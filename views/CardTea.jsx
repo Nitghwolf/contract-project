@@ -13,7 +13,7 @@ module.exports = function CardTea({ tea }) {
             <li>{tea.origin_country}</li>
           </ul>
         </a>
-        <a className="card-tea_btn-delete" href="#" id={tea.id}>Удалить позицию</a>
+        <a className="card-tea_btn-delete btn-amazing" href="#" id={tea.id}>Удалить позицию</a>
       </div>
     </li>
   );

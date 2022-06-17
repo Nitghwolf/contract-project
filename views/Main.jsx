@@ -4,8 +4,7 @@ const Layout = require('./Layout');
 module.exports = function Main({ user, teas }) {
   return (
     <Layout user={user}>
-
-      <div className="container">
+      <section className="section-main">
         <div id="map" />
         <ul className="admin-panel_list">
           {teas.map((tea) => (
@@ -24,8 +23,8 @@ module.exports = function Main({ user, teas }) {
             </li>
           ))}
         </ul>
-      </div>
-      <script src="https://api-maps.yandex.ru/2.1/?apikey=69e10893-2c84-42aa-89b4-4b684b720fad&lang=ru_RU" type="text/javascript" />
+      </section>
+      <script defer src="https://api-maps.yandex.ru/2.1/?apikey=69e10893-2c84-42aa-89b4-4b684b720fad&lang=ru_RU" type="text/javascript" />
       <script defer src="/maps.js" type="text/javascript" />
     </Layout>
   );

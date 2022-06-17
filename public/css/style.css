@@ -1,5 +1,11 @@
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: 'Laptev';
+  src: url(/font/Laptev_Brush.otf);
+}
+
+@font-face {
+  font-family: 'Cartoon';
+  src: url(/font/Cartoon1471Extended.ttf);
 }
 
 ul {
@@ -10,6 +16,10 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.section-main {
+  padding: 30px 0;
 }
 
 .admin-panel_title {
@@ -66,12 +76,75 @@ a {
   border-radius: 7px;
   transition: all .5s ease;
   display: block;
+  background-color: darksalmon;
 }
+
+.btn-amazing {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  color:white;
+  background-color: darksalmon;
+  border: 2px solid rgb(199, 124, 99);
+  border-radius: 0.75em;
+  transition: transform 0.15s;
+  transform-style: preserve-3d;
+  width: 178px;
+}
+
+/* .btn-amazing:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9c4d2;
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 rgb(199, 124, 99);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 0.15s, box-shadow 0.15s;
+} */
+
+.btn-amazing:hover {
+  color: black;
+  background: white;
+  transform: translate(0, 0.25em);
+}
+
+/* .btn-amazing:hover::before {
+  box-shadow: 0 0 0 2px rgb(199, 124, 99), 0 0.5em 0 0 rgb(199, 124, 99);
+  transform: translate3d(0, 0.5em, -1em);
+} */
+
+.btn-amazing:active {
+  background: #ffe9e9;
+  transform: translate(0em, 0.75em);
+}
+/* .btn-amazing:active::before {
+  box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  transform: translate3d(0, 0, -1em);
+} */
 
 .card-tea_btn-delete:hover {
   background-color: #fff;
   color: #000;
+}
 
+.navBar{
+  font-size: 18px;
 }
 
 .navBarElem.name {
@@ -81,6 +154,8 @@ a {
 
 .logo-block{
   display: flex;
+  font-family: 'Cartoon';
+  font-size: 18px;
 }
 
 .navBarElem a {
@@ -88,6 +163,16 @@ a {
     cursor: pointer;
     text-decoration: none; /* Убираем подчеркивание */
 }
+
+.navBarElem a:hover {
+  color: #E9967A;
+}
+
+.logo-block:hover {
+  color: #E9967A;
+}
+
+
 .navBarElem a:after {
 	content: "";
     display: block;
@@ -112,19 +197,13 @@ a {
     transition: width 0.5s;  /* Время эффекта */
 }
 
-
-
-/* .card-tea_item-desc:hover {
-  overflow: visible;
-  height: auto;
-  color: #fff;
-} */
-
-
 #map{
-  margin-left: 30%;
-  width: 600px;
-  height: 400px;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  margin: 0 auto 20px;
+  box-shadow: 0px 0px 2px 3px white;
+  border-radius: 2px;
 }
 
 .map-href{
@@ -283,4 +362,8 @@ display: flex;
 }
 .logoAndTitle {
   display: flex;
+}
+
+.commentText {
+  font-family: 'Laptev';
 }

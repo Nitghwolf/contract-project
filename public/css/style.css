@@ -24,6 +24,7 @@ a {
 
 .admin-panel_title {
   text-align: center;
+  margin-top: 20px;
 }
 
 .admin-panel_list {
@@ -344,12 +345,14 @@ button{
   margin-right: 10px;
 }
 .navBarLink {
-display: flex;
+  display: flex;
+  align-items: center;
 }
 
 .navBarTitle {
   display: flex;
-  }
+  align-items: center;
+}
 
 .content {
   display: flex;
@@ -359,8 +362,7 @@ display: flex;
 }
 
 .logo{
-  height: 20px;
-  width: 20px;
+  width: 35px;
   margin-left: 10px;
   margin-bottom: 6px;
   padding-bottom: 1px;
@@ -385,11 +387,6 @@ display: flex;
   margin-top: 10%;
 }
 
-.title_login {
-  text-align: center;
-  margin-top: 10%;
-}
-
 #signupForm input {
   border-radius: 0.25rem;
   width: 100%;
@@ -404,4 +401,9 @@ display: flex;
 
 .btn-reg-log {
   width: 100%;
+}
+
+.my_comments {
+  text-align: center;
+  margin: 30px 0 0 0;
 }

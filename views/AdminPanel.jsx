@@ -85,13 +85,18 @@ module.exports = function AdminPanel({ user, teas, comments }) {
           </>
         ) : (
           <>
-            {comments.map((comment) => (
-              <div className="card">
-                <div className="itemIncoment1">{user.user_name}</div>
-                <div>{comment.content}</div>
-                <div className="itemIncoment2">{` ${new Date(comment.createdAt).getDate()}.${new Date(comment.createdAt).getMonth()}.${new Date(comment.createdAt).getFullYear()} ${new Date(comment.createdAt).getHours()}:${new Date(comment.createdAt).getMinutes()}`}</div>
+            <h3 className="my_comments">Мои коментарии:</h3>
+            <div className="comentDivBody">
+              <div className="wrap">
+                {comments.map((comment) => (
+                  <div className="card">
+                    <div className="itemIncoment1">{user.user_name}</div>
+                    <div className="commentText">{comment.content}</div>
+                    <div className="itemIncoment2">{` ${new Date(comment.createdAt).getDate()}.${new Date(comment.createdAt).getMonth()}.${new Date(comment.createdAt).getFullYear()} ${new Date(comment.createdAt).getHours()}:${new Date(comment.createdAt).getMinutes()}`}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </>
         )}
       </div>

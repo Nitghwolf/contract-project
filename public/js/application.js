@@ -4,12 +4,46 @@ const adminPanelList = document.querySelector('.admin-panel_list');
 const commentForm = document.querySelector('form.comentDiv');
 try {
   adminPanel.addEventListener('click', async (e) => {
-    if (e.target.className === 'card-tea_btn-delete btn-amazing') {
+    if (e.target.classList.contains('card-tea_btn-delete')) {
       e.preventDefault();
       const responce = await fetch(`/adminpanel/${e.target.id}`, {
         method: 'DELETE',
       });
       e.target.closest('.admin-panel_item').remove();
+    }
+  });
+} catch (e) {}
+
+try {
+  adminPanel.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('card-tea_btn-edit')) {
+      e.preventDefault();
+      e.target.closest('.card-tea').classList.toggle('hidden');
+      e.target.closest('.admin-panel_item').querySelector('.card-tea-edit').classList.toggle('hidden');
+    }
+    if (e.target.classList.contains('btn-save')) {
+      const inputs = e.target.closest('.admin-panel_item').querySelectorAll('.form-control');
+      const responce = await fetch(`/adminpanel/${e.target.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: inputs[0].value,
+          sort: inputs[1].value,
+          location: inputs[2].value,
+          picture: inputs[3].value,
+          descr: inputs[4].value,
+        }),
+      });
+      const answerResponse = await responce.text();
+      e.target.closest('.admin-panel_item').querySelector('.card-tea').innerHTML = answerResponse;
+      e.target.closest('.admin-panel_item').querySelector('.card-tea').classList.toggle('hidden');
+      e.target.closest('.card-tea-edit').classList.toggle('hidden');
+    }
+    if (e.target.classList.contains('btn-cancel')) {
+      e.target.closest('.admin-panel_item').querySelector('.card-tea').classList.toggle('hidden');
+      e.target.closest('.card-tea-edit').classList.toggle('hidden');
     }
   });
 } catch (e) {
@@ -58,4 +92,3 @@ try {
 } catch (e) {
 
 }
-

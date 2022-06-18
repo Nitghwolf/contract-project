@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Tea extends Model {
     static associate({ Comment }) {
-      Tea.Comment = Tea.hasMany(Comment, { foreignKey: 'tea_id' });
+      Tea.Comment = Tea.hasMany(Comment, { foreignKey: 'tea_id', onDelete: 'cascade', hooks: true });
     }
   }
   Tea.init({

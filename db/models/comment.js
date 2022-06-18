@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Comment extends Model {
     static associate({ User, Tea }) {
       Comment.User = Comment.belongsTo(User, { foreignKey: 'user_id' });
-      Comment.Tea = Comment.belongsTo(Tea, { foreignKey: 'tea_id' });
+      Comment.Tea = Comment.belongsTo(Tea, { foreignKey: 'tea_id', onDelete: 'cascade', hooks: true });
     }
   }
   Comment.init({

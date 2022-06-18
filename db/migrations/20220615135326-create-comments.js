@@ -22,6 +22,8 @@ module.exports = {
           model: 'Teas',
           key: 'id',
         },
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       },
       content: {
         allowNull: false,

@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
     const { username, password } = req.body;
     const existingUser = await User.findOne({ where: { user_name: username } });
     if (existingUser) {
-      res.renderErrorComponent({ message: 'Такой пользователь уже существует'});
+      res.renderErrorComponent({ message: 'Такой пользователь уже существует' });
       return;
     }
 
@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
       req.session.userId = existingUser.id;
       res.redirect('/');
     } else {
-      res.renderErrorComponent({ message: 'Неверный логин или пароль, попробуйте авторизоваться заново'});
+      res.renderErrorComponent({ message: 'Неверный логин или пароль, попробуйте авторизоваться заново' });
     }
   } catch (error) {
     res.renderErrorComponent();
@@ -60,6 +60,7 @@ router.post('/login', async (req, res) => {
 router.get('/logout', async (req, res) => {
   try {
     req.session.destroy();
+    res.clearCookie('user_sid');
     res.redirect('/');
   } catch (error) {
     res.renderErrorComponent();
@@ -67,4 +68,3 @@ router.get('/logout', async (req, res) => {
 });
 
 module.exports = router;
- 
